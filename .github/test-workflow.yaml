@@ -1,0 +1,14 @@
+name: myjob
+on:
+  workflow_dispatch:
+jobs:
+  my_job:
+    runs-on: self-hosted
+    services:
+      redis:
+        image: redis
+    container:
+      image: alpine:3.15
+      options: --cpus 1
+    steps:
+      - run: pwd
